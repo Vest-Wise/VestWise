@@ -1,19 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { Nav } from 'react-bootstrap';
+import { Nav, Navbar, Container } from 'react-bootstrap';
 
-export function NavBar () {
+function NavBar () {
 
 
 return (
-    <>
-    <div className="d-flex">
-        <Nav className="flex-column bg-dark vh-100 p-3" style={{width: "250px" }}>
-            <Nav.Link href="#" className="text-light">Home</Nav.Link>
-            <Nav.Link href="#" className="text-light">Holder</Nav.Link>
-            <Nav.Link href="#" className="text-light">Holder</Nav.Link>
-            <Nav.Link href="#" className="text-light">Holder</Nav.Link>
-        </Nav>
-    </div>
+    <>        
+     <div className="d-flex vh-100">
+      <Navbar bg="dark" variant="dark" className="flex-column vh-100">
+        <Container className="flex-column">
+          <Navbar.Brand href="#home">VestWise</Navbar.Brand>
+          <Nav className="flex-column">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#features">Holder</Nav.Link>
+            <Nav.Link href="#pricing">Holder</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+     </div>
     </>
 )
 }
+
+export default NavBar;
