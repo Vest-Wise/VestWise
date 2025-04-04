@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
-export default function MainChart() {
+export default function Chart() {
     const [loading, setLoading] = useState(null);
     const [error, setError] = useState(null);
     const [stockData, setStockData] = useState(null);
