@@ -3,19 +3,22 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import NavBar from './components/NavBar';
-import CardComponent from './components/Card';
+// import StockInfo from './components/StockInfo';
+import Home from './views/Home';
 
 function App() {
-  // const [count, setCount] = useState(0)
-
+  
   return (
-// removed divs. I don't htink we need them
+  <main>
+    <NavBar />
     <Router>
-      <NavBar />
       <Routes>
-        <Route path="/stocknews" element={<CardComponent />} />
+        <Route path="/home" element={<Home/>} />
+        {/* <Route path="/stockInfo" element={<StockInfo />} /> */}
       </Routes>
     </Router>
+
+  </main>
   );
 }
       
