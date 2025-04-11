@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react';
 import { DateContext } from '../views/Detail';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";

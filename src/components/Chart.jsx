@@ -7,8 +7,7 @@ export default function Chart() {
     const [loading, setLoading] = useState(null);
     const [error, setError] = useState(null);
     const [stockData, setStockData] = useState(null);
-    const [startDate, setStartDate, endDate, setEndDate] = useContext(DateContext);
-    const [submit, setSubmit] = useContext(DateContext);
+    const [startDate, setStartDate, endDate, setEndDate, submit, setSubmit] = useContext(DateContext);
     const apiUrl = import.meta.env.VITE_API_URL;
     const apiKey = import.meta.env.VITE_API_KEY;
 

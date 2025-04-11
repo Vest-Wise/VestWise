@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import Chart from '../components/Chart';
 import DateInput from '../components/DateInput';
-import { Button } from 'bootstrap';
+import Submit from '../components/Submit';
 
 export const DateContext = createContext();
 
@@ -34,7 +34,10 @@ export default function Detail() {
   return (
     <DateContext.Provider value={[ startDate , setStartDate , endDate , setEndDate , submit , setSubmit]}>
       <Chart/>
-      <DateInput/>
+      <div className='dateHolder'>
+        <DateInput/>
+        <Submit/>
+      </div>
     </DateContext.Provider>
   )
 }
