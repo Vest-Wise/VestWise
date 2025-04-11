@@ -12,11 +12,10 @@ export default function DateInput() {
         const [start,end] = dateRange;
         setDateRange(dates)
         if (start && end){
-            // setStartDate(new Date(start).toISOString().slice(0,10));
-            // setEndDate(new Date(end).toISOString().slice(0,10));
-            console.log("start : " + start)
-            setStartDate(start);
-            setEndDate(end);
+            const newStart = new Date(start).toISOString().slice(0,10);
+            const newEnd = new Date(end).toISOString().slice(0,10);
+            setStartDate(newStart);
+            setEndDate(newEnd);
         }
 
     }
@@ -24,7 +23,7 @@ export default function DateInput() {
     useEffect(() => {
           console.log(`in picker start: ${startDate}`)
           console.log(`in picker end: ${endDate}`)
-        },[startDate])
+        },[dateRange])
 
     return (
     <DatePicker
