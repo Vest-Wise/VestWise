@@ -12,7 +12,7 @@ function NavBar() {
             VestWise
           </Navbar.Brand>
           <Nav className="flex-column" style={{ width: '100%' }}>
-            <Nav.Link href="/home" style={{ color: 'white' }}>Home</Nav.Link>
+            <Nav.Link href="/" style={{ color: 'white' }}>Home</Nav.Link>
             <Nav.Link href="/business" style={{ color: 'white' }}>Chart</Nav.Link>
             <Nav.Link href="/stock-reward" style={{ color: 'white' }}>Stock Reward</Nav.Link>
           </Nav>

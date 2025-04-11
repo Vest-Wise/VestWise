@@ -2,8 +2,11 @@ import React from "react";
 import { Card, Spinner, Alert } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
-const apiUrl = import.meta.env.VITE_API_URL;
-const apiKey = import.meta.env.VITE_API_KEY;
+// const apiUrl = import.meta.env.VITE_API_URL;
+// const apiKey = import.meta.env.VITE_API_KEY;
+
+// console.log("API URL:", apiUrl);
+// console.log("API Key:", apiKey);
 
 export default function Home() {
   const [stockInfo, setStockInfo] = useState(null);
@@ -44,11 +47,11 @@ export default function Home() {
     const fetchNews = async () => {
       try {
         const response = await fetch(
-          `${apiUrl}/v2/reference/news?ticker=VZ&order=asc&limit=10&sort=published_utc&apiKey=${apiKey}`
+          `https://api.polygon.io/v2/reference/news?ticker=VZ&order=asc&limit=10&sort=published_utc&apiKey=[REDACTED]`
         );
         if(response.ok){
           const data = await response.json();
-          console.log(data);
+          // console.log(data);
           setNewsInfo(data);
         }
       } catch (e) {
@@ -63,11 +66,15 @@ export default function Home() {
 
   if (loading) return <Spinner animation="border" />;
  
-
+console.log("News Info State: ", newsInfo);
+if (newsInfo && Array.isArray(newsInfo.results)) {
+  console.log("Results Length: ", newsInfo.results.length);
+}
   return (
     <div className="mt-4">
-      {/* <h3>Latest News</h3> */}
-      {newsInfo && newsInfo.results ? (
+      <h2>Hello from Home Page</h2>
+      <h3>Latest News</h3>
+      {newsInfo?.results?.length > 0 ? (
         newsInfo.results.map((article) => (
           <Card key={article.id} className="mb-3">
             <Card.Body>

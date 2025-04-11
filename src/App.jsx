@@ -9,16 +9,16 @@ import Home from './views/Home';
 function App() {
   
   return (
+    <Router>
   <main>
     <NavBar />
-    <Router>
       <Routes>
-        <Route path="/home" element={<Home/>} />
+        <Route path="/" element={<Home/>} />
         {/* <Route path="/stockInfo" element={<StockInfo />} /> */}
       </Routes>
+  </main>
     </Router>
 
-  </main>
   );
 }
       
